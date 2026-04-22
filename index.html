@@ -24,21 +24,25 @@
         .hero {
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
             padding: 4rem 3rem;
             max-width: 900px;
             margin: 0 auto;
         }
 
+        .hero-text {
+            flex: 1;
+        }
+
         .portrait {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
+            width: 280px;
+            height: 340px;
+            border-radius: 12px;
             object-fit: cover;
             object-position: center 20%;
-            margin-bottom: 1.5rem;
-            border: 3px solid #e8e4e0;
+            flex-shrink: 0;
         }
 
         .hello {
@@ -268,7 +272,9 @@
 
         /* --- Responsive --- */
         @media (max-width: 700px) {
-            .hero { padding: 3rem 1.5rem; }
+            .hero { padding: 3rem 1.5rem; flex-direction: column; gap: 2rem; }
+            .hero-text { order: 1; }
+            .portrait { width: 220px; height: 270px; order: 0; }
             .content { padding: 0 1.5rem 4rem; }
             .section {
                 grid-template-columns: 1fr;
@@ -287,20 +293,22 @@
 <body>
 
     <div class="hero">
+        <div class="hero-text">
+            <div class="hello">Hello, I'm</div>
+            <h1>Evan<br>Kravitz</h1>
+            <p class="intro">
+                Software engineer building ML infrastructure at AWS.
+                I help make machine learning models accessible at scale &mdash;
+                from deploying thousand-plus models on SageMaker to building
+                the services that power them.
+            </p>
+            <nav class="nav-links">
+                <a href="https://github.com/evakravi">GitHub</a>
+                <a href="https://linkedin.com/in/evanskravitz">LinkedIn</a>
+                <a href="mailto:kravitz.evan@gmail.com">Email</a>
+            </nav>
+        </div>
         <img src="photo.jpeg" alt="Evan Kravitz" class="portrait">
-        <div class="hello">Hello, I'm</div>
-        <h1>Evan<br>Kravitz</h1>
-        <p class="intro">
-            Software engineer building ML infrastructure at AWS.
-            I help make machine learning models accessible at scale &mdash;
-            from deploying thousand-plus models on SageMaker to building
-            the services that power them.
-        </p>
-        <nav class="nav-links">
-            <a href="https://github.com/evakravi">GitHub</a>
-            <a href="https://linkedin.com/in/evanskravitz">LinkedIn</a>
-            <a href="mailto:kravitz.evan@gmail.com">Email</a>
-        </nav>
     </div>
 
     <div class="content">
