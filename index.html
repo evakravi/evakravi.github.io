@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Evan Kravitz">
     <title>Evan Kravitz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,77 +16,244 @@
         }
 
         body {
-            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: #0e0e0e;
-            color: #e0e0e0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 2rem;
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: #fafafa;
+            color: #333;
+            line-height: 1.6;
         }
 
-        .container {
-            max-width: 520px;
+        .hero {
             text-align: center;
+            padding: 5rem 2rem 3rem;
+            border-bottom: 1px solid #eee;
         }
 
         .name {
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             font-weight: 300;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
-            margin-bottom: 0.75rem;
-            color: #ffffff;
-        }
-
-        .divider {
-            width: 40px;
-            height: 1px;
-            background: #444;
-            margin: 0 auto 1.25rem;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
         }
 
         .tagline {
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 400;
-            color: #888;
-            letter-spacing: 0.04em;
-            margin-bottom: 2.5rem;
+            color: #777;
+            margin-bottom: 1.5rem;
         }
 
         .links {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 0.75rem;
+            flex-wrap: wrap;
         }
 
         .links a {
-            color: #999;
+            color: #555;
             text-decoration: none;
-            font-size: 0.85rem;
-            letter-spacing: 0.06em;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
             text-transform: uppercase;
-            padding: 0.6rem 1.2rem;
-            border: 1px solid #2a2a2a;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
             border-radius: 4px;
-            transition: color 0.3s, border-color 0.3s;
+            transition: color 0.2s, border-color 0.2s;
         }
 
         .links a:hover {
-            color: #fff;
-            border-color: #555;
+            color: #111;
+            border-color: #999;
+        }
+
+        main {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #999;
+            margin-bottom: 1.25rem;
+        }
+
+        .entry {
+            margin-bottom: 1.25rem;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.15rem;
+        }
+
+        .entry-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .entry-date {
+            font-size: 0.8rem;
+            color: #999;
+            white-space: nowrap;
+            margin-left: 1rem;
+        }
+
+        .entry-subtitle {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 0.3rem;
+        }
+
+        .entry-description {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .publication {
+            margin-bottom: 1rem;
+        }
+
+        .publication-title {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        .publication-meta {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .publication-meta a {
+            color: #666;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+            transition: border-color 0.2s;
+        }
+
+        .publication-meta a:hover {
+            border-color: #999;
+        }
+
+        .education-detail {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        @media (max-width: 600px) {
+            .hero { padding: 3rem 1.5rem 2rem; }
+            .name { font-size: 2rem; }
+            main { padding: 2rem 1.5rem 3rem; }
+            .entry-header { flex-direction: column; }
+            .entry-date { margin-left: 0; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="hero">
         <h1 class="name">Evan Kravitz</h1>
-        <div class="divider"></div>
         <p class="tagline">Software Engineer</p>
         <div class="links">
             <a href="https://github.com/evakravi">GitHub</a>
+            <a href="https://linkedin.com/in/evanskravitz">LinkedIn</a>
+            <a href="mailto:kravitz.evan@gmail.com">Email</a>
         </div>
     </div>
+
+    <main>
+        <section>
+            <h2>Experience</h2>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Software Engineer &mdash; AWS</span>
+                    <span class="entry-date">2020 &ndash; Present</span>
+                </div>
+                <div class="entry-subtitle">Amazon SageMaker JumpStart, New York</div>
+                <div class="entry-description">
+                    Founding engineer on SageMaker JumpStart, growing it from inception to $30M ARR. Built the SageMaker Hub metadata service (100 TPS). Deployed 1000+ ML models globally including DeepSeek, Llama, Mistral, and Gemma. Contributed to Bedrock hosting infrastructure for serverless video generation.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Software Engineering Intern &mdash; Amazon Lab126</span>
+                    <span class="entry-date">Summer 2019</span>
+                </div>
+                <div class="entry-subtitle">Astro Home Robot, Sunnyvale</div>
+                <div class="entry-description">
+                    Developed C++ power monitoring library and behavior tree control system for Amazon's home robot.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Software Engineering Intern &mdash; Optiver</span>
+                    <span class="entry-date">Summer 2018</span>
+                </div>
+                <div class="entry-subtitle">Trading Systems, Chicago</div>
+                <div class="entry-description">
+                    Built low-latency C++ interface between FPGA trader and trading applications. Resolved trading race conditions and expanded performance monitoring infrastructure.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Software Engineering Intern &mdash; Verizon</span>
+                    <span class="entry-date">Summer 2017</span>
+                </div>
+                <div class="entry-subtitle">Big Data, Waltham</div>
+                <div class="entry-description">
+                    Simulated production environments with Java frameworks and created automated API testing library.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">M.Eng., EECS &mdash; UC Berkeley</span>
+                    <span class="entry-date">2019 &ndash; 2020</span>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">B.S., ECE &mdash; Cornell University</span>
+                    <span class="entry-date">2015 &ndash; 2019</span>
+                </div>
+                <div class="education-detail">Magna Cum Laude &middot; GPA 3.8 &middot; Eta Kappa Nu &middot; Tau Beta Pi</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Research</h2>
+
+            <div class="publication">
+                <div class="publication-title">Adversarially-Trained Deep Nets Transfer Better</div>
+                <div class="publication-meta">
+                    ICLR 2021 &middot; 100+ citations &middot;
+                    <a href="https://arxiv.org/abs/2007.05869">arXiv</a>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
