@@ -221,6 +221,21 @@
             vertical-align: middle;
         }
 
+        /* --- Blog grid --- */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .blog-grid .paper {
+            display: block;
+        }
+
+        .blog-grid .paper h3 {
+            font-size: 0.92rem;
+        }
+
         /* --- Footer links --- */
         .elsewhere {
             display: flex;
@@ -254,6 +269,7 @@
                 gap: 0.25rem;
             }
             .edu-grid { grid-template-columns: 1fr; }
+            .blog-grid { grid-template-columns: 1fr; }
             .nav-links { gap: 1.25rem; }
         }
     </style>
@@ -339,6 +355,48 @@
                         <h3>Adversarially-Trained Deep Nets Transfer Better</h3>
                         <div class="meta">ICLR 2021 &middot; 100+ citations <span>Paper</span></div>
                     </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-label">Writing</div>
+            <div class="blog-grid">
+                <a href="https://aws.amazon.com/blogs/machine-learning/llama-3-2-models-from-meta-are-now-available-in-amazon-sagemaker-jumpstart/" class="paper">
+                    <h3>Llama 3.2 on SageMaker JumpStart</h3>
+                    <div class="meta">AWS ML Blog</div>
+                </a>
+                <a href="https://aws.amazon.com/blogs/machine-learning/use-llama-3-1-405b-to-generate-synthetic-data-for-fine-tuning-tasks/" class="paper">
+                    <h3>Llama 3.1 405B for Synthetic Data</h3>
+                    <div class="meta">AWS ML Blog</div>
+                </a>
+                <a href="https://aws.amazon.com/blogs/machine-learning/gemma-is-now-available-in-amazon-sagemaker-jumpstart/" class="paper">
+                    <h3>Gemma on SageMaker JumpStart</h3>
+                    <div class="meta">AWS ML Blog</div>
+                </a>
+                <a href="https://aws.amazon.com/blogs/machine-learning/llama-guard-is-now-available-in-amazon-sagemaker-jumpstart/" class="paper">
+                    <h3>Llama Guard on SageMaker JumpStart</h3>
+                    <div class="meta">AWS ML Blog</div>
+                </a>
+                <a href="https://aws.amazon.com/blogs/machine-learning/zero-shot-and-few-shot-prompting-for-the-bloomz-176b-foundation-model-with-the-simplified-amazon-sagemaker-jumpstart-sdk/" class="paper">
+                    <h3>BloomZ 176B Zero-Shot &amp; Few-Shot Prompting</h3>
+                    <div class="meta">AWS ML Blog</div>
+                </a>
+                <a href="https://aws.amazon.com/blogs/machine-learning/gpt-oss-models-from-openai-are-now-available-on-sagemaker-jumpstart/" class="paper">
+                    <h3>GPT OSS Models on SageMaker JumpStart</h3>
+                    <div class="meta">AWS ML Blog</div>
+                </a>
+                <a href="https://aws.amazon.com/blogs/machine-learning/deploy-and-fine-tune-foundation-models-in-amazon-sagemaker-jumpstart-with-two-lines-of-code/" class="paper">
+                    <h3>Deploy &amp; Fine-Tune with Two Lines of Code</h3>
+                    <div class="meta">AWS ML Blog</div>
+                </a>
+                <a href="https://aws.amazon.com/blogs/machine-learning/deploy-pre-trained-models-on-aws-wavelength-with-5g-edge-using-amazon-sagemaker-jumpstart/" class="paper">
+                    <h3>5G Edge Deployment with SageMaker JumpStart</h3>
+                    <div class="meta">AWS ML Blog</div>
+                </a>
+                <a href="https://aws.amazon.com/blogs/machine-learning/enable-amazon-sagemaker-jumpstart-for-custom-iam-execution-roles/" class="paper">
+                    <h3>Custom IAM Roles for SageMaker JumpStart</h3>
+                    <div class="meta">AWS ML Blog</div>
                 </a>
             </div>
         </div>
