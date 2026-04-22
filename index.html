@@ -7,253 +7,352 @@
     <title>Evan Kravitz</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background-color: #fafafa;
-            color: #333;
-            line-height: 1.6;
+            font-family: "DM Sans", sans-serif;
+            background: #f5f3f0;
+            color: #2a2a2a;
+            overflow-x: hidden;
         }
 
+        a { color: inherit; text-decoration: none; }
+
+        /* --- Hero --- */
         .hero {
-            text-align: center;
-            padding: 5rem 2rem 3rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .name {
-            font-size: 2.6rem;
-            font-weight: 300;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: #1a1a1a;
-            margin-bottom: 0.5rem;
-        }
-
-        .tagline {
-            font-size: 1.05rem;
-            font-weight: 400;
-            color: #777;
-            margin-bottom: 1.5rem;
-        }
-
-        .links {
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .links a {
-            color: #555;
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            padding: 0.5rem 1rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            transition: color 0.2s, border-color 0.2s;
-        }
-
-        .links a:hover {
-            color: #111;
-            border-color: #999;
-        }
-
-        main {
-            max-width: 680px;
+            padding: 4rem 3rem;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 3rem 2rem 4rem;
         }
 
-        section {
-            margin-bottom: 2.5rem;
-        }
-
-        h2 {
-            font-size: 0.75rem;
-            font-weight: 600;
+        .hello {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #999;
-            margin-bottom: 1.25rem;
-        }
-
-        .entry {
-            margin-bottom: 1.25rem;
-        }
-
-        .entry-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.15rem;
-        }
-
-        .entry-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #1a1a1a;
-        }
-
-        .entry-date {
-            font-size: 0.8rem;
-            color: #999;
-            white-space: nowrap;
-            margin-left: 1rem;
-        }
-
-        .entry-subtitle {
-            font-size: 0.85rem;
-            color: #777;
-            margin-bottom: 0.3rem;
-        }
-
-        .entry-description {
-            font-size: 0.85rem;
-            color: #555;
-            line-height: 1.5;
-        }
-
-        .publication {
+            color: #a09080;
             margin-bottom: 1rem;
         }
 
-        .publication-title {
+        h1 {
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(3rem, 7vw, 5rem);
+            font-weight: 400;
+            line-height: 1.1;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro {
+            font-size: 1.15rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: #666;
+            max-width: 540px;
+            margin-bottom: 2.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
             font-size: 0.85rem;
             font-weight: 500;
-            color: #1a1a1a;
-        }
-
-        .publication-meta {
-            font-size: 0.8rem;
+            letter-spacing: 0.05em;
             color: #999;
+            transition: color 0.2s;
+            position: relative;
         }
 
-        .publication-meta a {
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #1a1a1a;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover { color: #1a1a1a; }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* --- Content sections --- */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 3rem 6rem;
+        }
+
+        .section {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 2rem;
+            padding: 3rem 0;
+            border-top: 1px solid #e0dcd8;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #a09080;
+            padding-top: 0.3rem;
+        }
+
+        /* --- Timeline --- */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 1.5rem;
+        }
+
+        .timeline-year {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #b0a090;
+            padding-top: 0.25rem;
+        }
+
+        .timeline-body h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 0.2rem;
+        }
+
+        .timeline-body .where {
+            font-size: 0.85rem;
+            font-weight: 300;
+            font-style: italic;
+            color: #999;
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-body p {
+            font-size: 0.88rem;
+            font-weight: 300;
+            line-height: 1.6;
             color: #666;
-            text-decoration: none;
-            border-bottom: 1px solid #ddd;
+        }
+
+        /* --- Education cards --- */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+
+        .edu-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 1px solid #e8e4e0;
+        }
+
+        .edu-card h3 {
+            font-family: "DM Serif Display", serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-card .degree {
+            font-size: 0.85rem;
+            color: #888;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-card .detail {
+            font-size: 0.78rem;
+            color: #b0a090;
+            line-height: 1.5;
+        }
+
+        /* --- Research --- */
+        .paper {
+            background: #fff;
+            border-radius: 10px;
+            padding: 1.5rem 1.75rem;
+            border: 1px solid #e8e4e0;
             transition: border-color 0.2s;
         }
 
-        .publication-meta a:hover {
-            border-color: #999;
+        .paper:hover { border-color: #ccc; }
+
+        .paper h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
         }
 
-        .education-detail {
-            font-size: 0.8rem;
+        .paper .meta {
+            font-size: 0.82rem;
             color: #999;
+            font-weight: 300;
         }
 
-        @media (max-width: 600px) {
-            .hero { padding: 3rem 1.5rem 2rem; }
-            .name { font-size: 2rem; }
-            main { padding: 2rem 1.5rem 3rem; }
-            .entry-header { flex-direction: column; }
-            .entry-date { margin-left: 0; }
+        .paper .meta span {
+            display: inline-block;
+            background: #f0ece8;
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #a09080;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
+        /* --- Footer links --- */
+        .elsewhere {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .elsewhere a {
+            font-size: 0.88rem;
+            font-weight: 400;
+            padding: 0.6rem 1.25rem;
+            border: 1px solid #ddd8d2;
+            border-radius: 6px;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .elsewhere a:hover {
+            background: #fff;
+            border-color: #bbb;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 700px) {
+            .hero { padding: 3rem 1.5rem; }
+            .content { padding: 0 1.5rem 4rem; }
+            .section {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 0.25rem;
+            }
+            .edu-grid { grid-template-columns: 1fr; }
+            .nav-links { gap: 1.25rem; }
         }
     </style>
 </head>
 <body>
+
     <div class="hero">
-        <h1 class="name">Evan Kravitz</h1>
-        <p class="tagline">Software Engineer</p>
-        <div class="links">
+        <div class="hello">Hello, I'm</div>
+        <h1>Evan<br>Kravitz</h1>
+        <p class="intro">
+            Software engineer building ML infrastructure at AWS.
+            I help make machine learning models accessible at scale &mdash;
+            from deploying thousand-plus models on SageMaker to building
+            the services that power them.
+        </p>
+        <nav class="nav-links">
             <a href="https://github.com/evakravi">GitHub</a>
             <a href="https://linkedin.com/in/evanskravitz">LinkedIn</a>
             <a href="mailto:kravitz.evan@gmail.com">Email</a>
-        </div>
+        </nav>
     </div>
 
-    <main>
-        <section>
-            <h2>Experience</h2>
+    <div class="content">
 
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Software Engineer &mdash; AWS</span>
-                    <span class="entry-date">2020 &ndash; Present</span>
+        <div class="section">
+            <div class="section-label">Work</div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2020 &mdash;</div>
+                    <div class="timeline-body">
+                        <h3>Software Engineer</h3>
+                        <div class="where">AWS &middot; SageMaker JumpStart &middot; New York</div>
+                        <p>Founding engineer. Grew the platform from zero to $30M ARR. Built the Hub metadata service handling 100 TPS. Deployed 1000+ ML models globally &mdash; Llama, DeepSeek, Mistral, Gemma, and more. Contributed to Bedrock serverless hosting.</p>
+                    </div>
                 </div>
-                <div class="entry-subtitle">Amazon SageMaker JumpStart, New York</div>
-                <div class="entry-description">
-                    Founding engineer on SageMaker JumpStart, growing it from inception to $30M ARR. Built the SageMaker Hub metadata service (100 TPS). Deployed 1000+ ML models globally including DeepSeek, Llama, Mistral, and Gemma. Contributed to Bedrock hosting infrastructure for serverless video generation.
+                <div class="timeline-item">
+                    <div class="timeline-year">2019</div>
+                    <div class="timeline-body">
+                        <h3>Intern</h3>
+                        <div class="where">Amazon Lab126 &middot; Astro Robot &middot; Sunnyvale</div>
+                        <p>C++ power monitoring and behavior tree control for Amazon's home robot.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-body">
+                        <h3>Intern</h3>
+                        <div class="where">Optiver &middot; Trading Systems &middot; Chicago</div>
+                        <p>Low-latency C++ interfaces between FPGA traders and applications. Resolved race conditions in live trading systems.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2017</div>
+                    <div class="timeline-body">
+                        <h3>Intern</h3>
+                        <div class="where">Verizon &middot; Big Data &middot; Waltham</div>
+                        <p>Production simulation with Java frameworks and automated API testing.</p>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Software Engineering Intern &mdash; Amazon Lab126</span>
-                    <span class="entry-date">Summer 2019</span>
+        <div class="section">
+            <div class="section-label">Education</div>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h3>UC Berkeley</h3>
+                    <div class="degree">M.Eng., EECS &middot; 2020</div>
                 </div>
-                <div class="entry-subtitle">Astro Home Robot, Sunnyvale</div>
-                <div class="entry-description">
-                    Developed C++ power monitoring library and behavior tree control system for Amazon's home robot.
+                <div class="edu-card">
+                    <h3>Cornell</h3>
+                    <div class="degree">B.S., ECE &middot; 2019</div>
+                    <div class="detail">Magna Cum Laude &middot; 3.8 GPA<br>Eta Kappa Nu &middot; Tau Beta Pi</div>
                 </div>
             </div>
+        </div>
 
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Software Engineering Intern &mdash; Optiver</span>
-                    <span class="entry-date">Summer 2018</span>
-                </div>
-                <div class="entry-subtitle">Trading Systems, Chicago</div>
-                <div class="entry-description">
-                    Built low-latency C++ interface between FPGA trader and trading applications. Resolved trading race conditions and expanded performance monitoring infrastructure.
-                </div>
+        <div class="section">
+            <div class="section-label">Research</div>
+            <div>
+                <a href="https://arxiv.org/abs/2007.05869">
+                    <div class="paper">
+                        <h3>Adversarially-Trained Deep Nets Transfer Better</h3>
+                        <div class="meta">ICLR 2021 &middot; 100+ citations <span>Paper</span></div>
+                    </div>
+                </a>
             </div>
+        </div>
 
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Software Engineering Intern &mdash; Verizon</span>
-                    <span class="entry-date">Summer 2017</span>
-                </div>
-                <div class="entry-subtitle">Big Data, Waltham</div>
-                <div class="entry-description">
-                    Simulated production environments with Java frameworks and created automated API testing library.
-                </div>
+        <div class="section">
+            <div class="section-label">Elsewhere</div>
+            <div class="elsewhere">
+                <a href="https://github.com/evakravi">GitHub</a>
+                <a href="https://linkedin.com/in/evanskravitz">LinkedIn</a>
+                <a href="mailto:kravitz.evan@gmail.com">Email</a>
             </div>
-        </section>
+        </div>
 
-        <section>
-            <h2>Education</h2>
+    </div>
 
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">M.Eng., EECS &mdash; UC Berkeley</span>
-                    <span class="entry-date">2019 &ndash; 2020</span>
-                </div>
-            </div>
-
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">B.S., ECE &mdash; Cornell University</span>
-                    <span class="entry-date">2015 &ndash; 2019</span>
-                </div>
-                <div class="education-detail">Magna Cum Laude &middot; GPA 3.8 &middot; Eta Kappa Nu &middot; Tau Beta Pi</div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Research</h2>
-
-            <div class="publication">
-                <div class="publication-title">Adversarially-Trained Deep Nets Transfer Better</div>
-                <div class="publication-meta">
-                    ICLR 2021 &middot; 100+ citations &middot;
-                    <a href="https://arxiv.org/abs/2007.05869">arXiv</a>
-                </div>
-            </div>
-        </section>
-    </main>
 </body>
 </html>
