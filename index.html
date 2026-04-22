@@ -24,25 +24,40 @@
         .hero {
             min-height: 100vh;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 4rem;
+            flex-direction: column;
+            justify-content: center;
             padding: 4rem 3rem;
             max-width: 900px;
             margin: 0 auto;
         }
 
-        .hero-text {
+        /* --- Photo divider --- */
+        .photo-break {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .photo-break::before,
+        .photo-break::after {
+            content: "";
             flex: 1;
+            height: 1px;
+            background: #e0dcd8;
         }
 
         .portrait {
-            width: 280px;
-            height: 340px;
-            border-radius: 12px;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
             object-fit: cover;
             object-position: center 20%;
             flex-shrink: 0;
+            border: 4px solid #f5f3f0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
         }
 
         .hello {
@@ -272,9 +287,9 @@
 
         /* --- Responsive --- */
         @media (max-width: 700px) {
-            .hero { padding: 3rem 1.5rem; flex-direction: column; gap: 2rem; }
-            .hero-text { order: 1; }
-            .portrait { width: 220px; height: 270px; order: 0; }
+            .hero { padding: 3rem 1.5rem; }
+            .photo-break { padding: 0 1.5rem; }
+            .portrait { width: 110px; height: 110px; }
             .content { padding: 0 1.5rem 4rem; }
             .section {
                 grid-template-columns: 1fr;
@@ -293,21 +308,22 @@
 <body>
 
     <div class="hero">
-        <div class="hero-text">
-            <div class="hello">Hello, I'm</div>
-            <h1>Evan<br>Kravitz</h1>
-            <p class="intro">
-                Software engineer building ML infrastructure at AWS.
-                I help make machine learning models accessible at scale &mdash;
-                from deploying thousand-plus models on SageMaker to building
-                the services that power them.
-            </p>
-            <nav class="nav-links">
-                <a href="https://github.com/evakravi">GitHub</a>
-                <a href="https://linkedin.com/in/evanskravitz">LinkedIn</a>
-                <a href="mailto:kravitz.evan@gmail.com">Email</a>
-            </nav>
-        </div>
+        <div class="hello">Hello, I'm</div>
+        <h1>Evan<br>Kravitz</h1>
+        <p class="intro">
+            Software engineer building ML infrastructure at AWS.
+            I help make machine learning models accessible at scale &mdash;
+            from deploying thousand-plus models on SageMaker to building
+            the services that power them.
+        </p>
+        <nav class="nav-links">
+            <a href="https://github.com/evakravi">GitHub</a>
+            <a href="https://linkedin.com/in/evanskravitz">LinkedIn</a>
+            <a href="mailto:kravitz.evan@gmail.com">Email</a>
+        </nav>
+    </div>
+
+    <div class="photo-break">
         <img src="photo.jpeg" alt="Evan Kravitz" class="portrait">
     </div>
 
@@ -361,7 +377,7 @@
                 <div class="edu-card">
                     <h3>Cornell</h3>
                     <div class="degree">B.S., ECE &middot; 2019</div>
-                    <div class="detail">Magna Cum Laude &middot; 3.8 GPA<br>Eta Kappa Nu &middot; Tau Beta Pi</div>
+                    <div class="detail">Magna Cum Laude &middot; Eta Kappa Nu &middot; Tau Beta Pi</div>
                 </div>
             </div>
         </div>
